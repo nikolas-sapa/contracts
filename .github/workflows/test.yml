@@ -17,5 +17,8 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Pin npm major so npm ci does not depend on the runner image
+        run: npm install -g npm@11
+
       - run: npm ci
       - run: npm test
