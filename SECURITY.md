@@ -1,7 +1,7 @@
 # Security Policy
 
-> Phase 1 of the stalled docs bulk PR #1 (Dec 2025): minimal docs/CI slice only.
-> No contract changes here.
+> Minimal docs/CI slice only. No contract changes here.
+> Related to #1 (authored by winsznx), but independent of it.
 
 ## Supported Versions
 
@@ -37,3 +37,7 @@ Scope notes (incl. stSTXbtc, see `feat: stSTXbtc contracts and audit`) are insid
 Pushes and PRs run the Clarinet/vitest suite via
 [`.github/workflows/test.yml`](./.github/workflows/test.yml)
 (`npm ci` + `npm test`). A green run is required before any fix merges.
+
+Coverage and contract-cost reports are produced by `npm run test:report`
+and uploaded as a CI artifact. They are informational, not a gate: no
+step fails on them.

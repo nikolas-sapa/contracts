@@ -22,3 +22,15 @@ jobs:
 
       - run: npm ci
       - run: npm test
+
+      - name: Coverage report
+        run: npm run test:report
+
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: |
+            lcov.info
+            costs-reports.json
+          retention-days: 7
